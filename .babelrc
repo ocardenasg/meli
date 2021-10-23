@@ -1,0 +1,16 @@
+{
+  "presets": ["next/babel"],
+  "plugins": [
+    ["@babel/plugin-transform-runtime"],
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": true,
+        "minify": true,
+        "preprocess": false,
+        "displayName": true
+      }
+    ],
+    ["@babel/plugin-proposal-class-properties"]
+  ]
+}
