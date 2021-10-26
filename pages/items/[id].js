@@ -57,7 +57,17 @@ const Item = ({ router }) => {
         </Text>
       </Wrapper>
       <Wrapper columns={10}>
-        <Container start={1} end={8} height="680px" width="680px" margin="1rem">
+        <Container
+          start={1}
+          end={8}
+          height="680px"
+          width="680px"
+          margin="1rem auto"
+          mobileStart={1}
+          mobileEnd={13}
+          mobileHeight="320px"
+          mobileWidth="320px"
+        >
           <Image
             layout="fill"
             quality={100}
@@ -66,7 +76,13 @@ const Item = ({ router }) => {
             src={data.item.picture}
           />
         </Container>
-        <Container start={8} end={11} margin="2rem 2rem 0 0">
+        <Container
+          start={8}
+          end={11}
+          margin="2rem 2rem 0 0"
+          mobileStart={2}
+          mobileEnd={12}
+        >
           <Text size="14">
             {data.item.condition} - {data.item.soldQuantity} Vendidos
           </Text>
@@ -78,7 +94,13 @@ const Item = ({ router }) => {
           </Text>
           <Button>Comprar</Button>
         </Container>
-        <Container start={1} end={8} margin="2rem">
+        <Container
+          start={1}
+          end={8}
+          margin="2rem"
+          mobileStart={1}
+          mobileEnd={13}
+        >
           <Text size="28">Descripción del producto</Text>
           <Text size="16" margin="2rem 0" align="justify" color="gray">
             {data.item.description || data.item.title}

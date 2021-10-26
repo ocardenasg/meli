@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-export const Container = styled.div`
+export const Container = styled.header`
   background-color: var(--yellow);
   height: fit-content;
   width: 100%;
@@ -16,12 +16,23 @@ export const Content = styled.div`
   margin: 0 auto;
   max-width: var(--max-width);
   height: 4rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: repeat(5, 1fr);
+    padding: 0 1rem;
+    grid-gap: 0;
+  }
 `
 
 export const Logo = styled.div`
   grid-column-start: 2;
   grid-column-end: 3;
   max-width: 64px;
+
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
 `
 
 export const Search = styled.form`
@@ -29,6 +40,11 @@ export const Search = styled.form`
   grid-column-end: 12;
   display: grid;
   grid-template-columns: auto 40px;
+
+  @media (max-width: 768px) {
+    grid-column-start: 2;
+    grid-column-end: 6;
+  }
 `
 
 export const InputSearch = styled.input`

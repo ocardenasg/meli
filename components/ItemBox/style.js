@@ -8,6 +8,10 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: 180px auto 16%;
   grid-gap: 1rem;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 90px auto 16%;
+  }
 `
 
 export const Img = styled.div`

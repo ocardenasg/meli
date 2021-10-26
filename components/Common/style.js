@@ -27,6 +27,12 @@ export const Content = styled.article`
   grid-column-end: 12;
   grid-gap: 1rem;
   grid-template-columns: repeat(${({ columns }) => columns || 1}, 1fr);
+
+  @media (max-width: 768px) {
+    grid-column-start: 1;
+    grid-column-end: 13;
+    margin: 0 1rem;
+  }
 `
 
 export const Container = styled.div`
@@ -37,6 +43,13 @@ export const Container = styled.div`
   padding: ${({ padding }) => padding || 0};
   position: relative;
   width: ${({ width }) => width};
+
+  @media (max-width: 768px) {
+    grid-column-end: ${({ mobileEnd }) => mobileEnd};
+    grid-column-start: ${({ mobileStart }) => mobileStart};
+    height: ${({ mobileHeight }) => mobileHeight};
+    width: ${({ mobileWidth }) => mobileWidth};
+  }
 `
 
 export const Text = styled.p`

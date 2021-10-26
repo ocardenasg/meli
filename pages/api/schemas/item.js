@@ -11,20 +11,14 @@ import {
 import resolveDescription from '../resolvers/description'
 import resolvePathFromRoot from '../resolvers/pathFromRoot'
 
-// TODO: mover a un element de enum
-const conditions = {
-  new: 'Nuevo',
-  used: 'Usado',
-}
+const conditions = { new: 'Nuevo', used: 'Usado' }
 
-// TODO: move to another folder
-const formatter = locale =>
-  new Intl.NumberFormat(locale, {
-    currency: 'USD',
-    style: 'currency',
-    minimumFractionDigits: 0,
-    maximumFractionDigits: 0,
-  })
+const formatter = new Intl.NumberFormat('en-US', {
+  currency: 'USD',
+  style: 'currency',
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+})
 
 const PathFromRoot = new GraphQLObjectType({
   name: 'PathFromRoot',
@@ -85,10 +79,7 @@ export default new GraphQLObjectType({
     formattedPrice: {
       type: GraphQLString,
       description: 'Formatted item price based on currency id',
-      resolve: parent =>
-        formatter(`es-${parent.currency_id}`)
-          .format(parent.price)
-          .replace(/,/g, '.'),
+      resolve: parent => formatter.format(parent.price).replace(/,/g, '.'),
     },
   },
 })
